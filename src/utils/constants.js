@@ -1,4 +1,4 @@
-const SAMPLE_JSON = {
+export const SAMPLE_JSON = {
   user: {
     id: 1,
     name: 'John Doe',
@@ -21,4 +21,5 @@ const SAMPLE_JSON = {
   },
 };
 
-export default SAMPLE_JSON;
+export const HORIZONTAL_SPACING = 220;
+export const VERTICAL_SPACING = 130;
