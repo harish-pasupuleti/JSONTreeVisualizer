@@ -1,11 +1,11 @@
 import React from 'react';
 import { ReactFlowProvider } from 'reactflow';
-import VisualizerContainer from './VisualizerContainer';
+import JSONTreeVisualizerContent from './components/JSONTreeVisualizerContent';
 
 export default function JSONTreeVisualizer() {
   return (
     <ReactFlowProvider>
-      <VisualizerContainer />
+      <JSONTreeVisualizerContent />
     </ReactFlowProvider>
   );
 }
