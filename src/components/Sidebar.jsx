@@ -10,6 +10,7 @@ export default function Sidebar({
 }) {
   return (
     <>
+      {/* Sidebar Panel */}
       <div
         className={`
           md:relative fixed md:translate-x-0
@@ -93,14 +94,19 @@ export default function Sidebar({
         )}
 
         <div className={`mt-4 text-xs ${darkMode ? 'text-gray-400' : 'text-gray-700'}`}>
-          🟦 Nodes: {nodes.length} <br />
-          🟥 Edges: {edges.length}
+           Nodes: {nodes.length} <br />
+           Edges: {edges.length}
         </div>
       </div>
 
+      {/* Background dim effect (keep tree visible) */}
       {sidebarOpen && (
         <div
-          className="fixed top-[64px] left-0 right-0 bottom-0 bg-black bg-opacity-50 z-20 md:hidden"
+          className="
+            fixed top-[64px] left-0 right-0 bottom-0 
+            backdrop-blur-[2px] bg-black/30 
+            z-20 md:hidden transition-opacity duration-300
+          "
           onClick={() => setSidebarOpen(false)}
         />
       )}
