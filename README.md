@@ -42,21 +42,23 @@ This project provides **real-time tree generation**, **path-based node highlight
 
 ## 📂 Project Structure
 
+
+```bash
 src/
 │
 ├── components/
-│ ├── JSONTreeVisualizerContent.jsx # Main container with logic and layout
-│ ├── FlowCanvas.jsx # ReactFlow canvas setup
-│ ├── CustomNode.jsx # Custom styled node component
-│ ├── Sidebar.jsx # JSON input and control sidebar
-│ ├── Header.jsx # Top bar with theme and toggle
+│   ├── JSONTreeVisualizerContent.jsx   # Main visualizer logic
+│   ├── FlowCanvas.jsx                  # Canvas with React Flow
+│   ├── CustomNode.jsx                  # Node design and copy logic
+│   ├── Sidebar.jsx                     # Input, controls, search panel
+│   ├── Header.jsx                      # Top bar with mode & menu toggle
 │
 ├── utils/
-│ ├── jsonUtils.js # JSON parsing and tree-building logic
-│ ├── canvasExporter.js # Export ReactFlow canvas as image
+│   ├── jsonUtils.js                    # JSON parsing and tree building
+│   ├── canvasExporter.js               # Export visualization as PNG
 │
-├── App.jsx
-└── main.jsx
+├── index.css                           # Tailwind base styles
+└── main.jsx                            # Entry point
 
 
 ---
@@ -78,3 +80,46 @@ npm install
 
 # Start the development server
 npm run dev
+
+---
+## 🎯 Usage Guide
+
+- **Paste JSON** in the sidebar text area.  
+- Click **"Generate Tree"** to visualize.  
+- Use the **Search Path** field (example: `$.user.name`) to locate specific nodes.  
+- Toggle between **Dark / Light Mode** using the header switch.  
+- Click **Download** to export the tree as a **PNG image**.  
+- On small screens, tap the **menu icon** to open or close the sidebar.  
+
+---
+
+## 🧠 Key Implementation Highlights
+
+### 🟩 Custom Node Rendering
+Each node is **color-coded by type** — key, value, object, array — with **smooth animations** and **copy-to-clipboard path support**.
+
+### 🟦 Canvas Export Logic
+A custom algorithm using `getRectOfNodes()` and `CanvasRenderingContext2D` ensures the **entire tree (including edges, nodes, and colors)** is accurately captured in exported images.
+
+### 🟨 Responsive UI Design
+The **sidebar automatically collapses on mobile**, overlaying a **transparent black background** for focus on controls.
+
+### 🟥 Error Resilience
+Invalid JSON automatically **clears visualization** and provides **user-friendly error feedback**.
+
+---
+
+## 💾 Example JSON
+
+```json
+{
+  "user": {
+    "id": 1,
+    "name": "Harish",
+    "address": {
+      "city": "Vizag",
+      "country": "India"
+    },
+    "skills": ["React", "Node.js", "MongoDB"]
+  }
+}
