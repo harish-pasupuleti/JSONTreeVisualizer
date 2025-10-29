@@ -60,7 +60,7 @@ src/
 ├── index.css                           # Tailwind base styles
 └── main.jsx                            # Entry point
 
-
+```
 ---
 
 
@@ -80,7 +80,7 @@ npm install
 
 # Start the development server
 npm run dev
-
+```
 ---
 ## 🎯 Usage Guide
 
@@ -123,3 +123,4 @@ Invalid JSON automatically **clears visualization** and provides **user-friendly
     "skills": ["React", "Node.js", "MongoDB"]
   }
 }
+```
